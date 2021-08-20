@@ -28,7 +28,7 @@ deviceStatusSchema.pre('save', async function (next) {
 })
 
 //Creating Device Model
-const DeviceStatus = mongoose.model('Device Status', deviceStatusSchema)
+const DeviceStatus = mongoose.model('DeviceStatus', deviceStatusSchema)
 
 
 module.exports = DeviceStatus

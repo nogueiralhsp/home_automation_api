@@ -17,4 +17,18 @@ router.post('/device/status', async (req,res) => {
     }
 })
 
+// reading value from device
+router.get('/device/:id',async(req, res) => {
+    const _id = req.params.id
+    console.log(req.params);
+    try {
+        const status = await DeviceStatus.findOne({device:_id}).sort({_id:-1});
+        if (!status) {
+            return res.status(404).send('Not Found')
+        }
+        res.send(status)
+    } catch (e) {
+        res.status(500).send('Internal Server Error')
+    }
+})
 module.exports = router;
