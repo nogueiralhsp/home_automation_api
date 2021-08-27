@@ -31,4 +31,19 @@ router.get('/device/:id',async(req, res) => {
         res.status(500).send('Internal Server Error')
     }
 })
+
+// reading digital devices at once
+router.get('/devices/digital',async(req, res) => {
+    console.log(req.params);
+    try {
+        const status = await DeviceStatus.find({statusType:'digital'});
+        console.log(status);
+        if (!status) {
+            return res.status(404).send('Not Found')
+        }
+        res.send(status)
+    } catch (e) {
+        res.status(500).send('Internal Server Error')
+    }
+})
 module.exports = router;
