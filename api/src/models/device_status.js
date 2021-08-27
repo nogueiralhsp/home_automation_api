@@ -11,6 +11,11 @@ const deviceStatusSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
+    statusBooleanValue: {
+        type: Boolean,
+        required: true,
+        trim: true
+    }, 
     statusType:{
         type: String,
         required: true,

@@ -13,7 +13,7 @@ router.post('/device/status', async (req,res) => {
         res.status(200).send('status saved')
     } catch (e) {
         console.log(e);
-        res.status(400).send()
+        res.status(400).send('status not saved')
     }
 })
 
