@@ -2,9 +2,10 @@ var express = require('express');
 const router = new express.Router();
 const Device = require('../models/device')
 
-/* GET users listing. */
+/* GET devices listing. */
 router.get('/devices', function(req, res, next) {
   res.send('here is the divices router');
+  console.log(res);
 });
 
 /*Create device */
