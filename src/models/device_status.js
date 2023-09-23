@@ -1,10 +1,14 @@
 const mongoose = require('mongoose')
 
 const deviceStatusSchema = new mongoose.Schema({
-    device: {
+    device: {// this is the device id
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'Device'
+    },
+    deviceDescription: {
+        type: String,
+        trim: true
     },
     statusValue: {
         type: String,
